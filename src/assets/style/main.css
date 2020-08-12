@@ -198,4 +198,8 @@
     :root{
       font-size: 62.5%;
     }
+
+    #app .userContent{
+        max-width: 700px;
+    }
   }
