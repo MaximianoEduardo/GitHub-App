@@ -9,21 +9,23 @@ import Repos from './repos'
 const AppContent = ({ userinfo, repos, starred, isFetching, handleSearch, getRepos, getStarred }) => (
   <div className='app'>
     <Search isDisable={isFetching} handleSearch={handleSearch} />
-    {isFetching && <div>Carregando..</div>}
-    {!!userinfo && <UserInfo userinfo={userinfo} />}
-    {!!userinfo && <Actions getRepos={getRepos} getStarred={getStarred} />}
-    {!!repos.length &&
-      <Repos
-        className='repos'
-        title='Repositórios'
-        repos={repos}
-      />}
-    {!!starred.length &&
-      <Repos
-        className='repos'
-        title='Favoritos'
-        repos={starred}
-      />}
+    {isFetching && <div className='loading'>Carregando..</div>}
+    <div className='userContent'>
+      {!!userinfo && <UserInfo userinfo={userinfo} />}
+      {!!userinfo && <Actions getRepos={getRepos} getStarred={getStarred} />}
+      {!!repos.length &&
+        <Repos
+          className='repos'
+          title='Repositórios'
+          repos={repos}
+        />}
+      {!!starred.length &&
+        <Repos
+          className='repos'
+          title='Favoritos'
+          repos={starred}
+        />}
+    </div>
   </div>
 
 )

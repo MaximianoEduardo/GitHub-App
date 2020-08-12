@@ -4,6 +4,7 @@ import React, { PropTypes } from 'react'
 
 const Search = ({ isDisabled, handleSearch }) => (
   <div className='search'>
+    <h1>GitHub App</h1>
     <input
       type='search'
       placeholder='Digite o nome do usuário do GitHub'
